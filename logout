@@ -1,0 +1,12 @@
+<?php 
+session_start(); /* Starts the session */
+
+if(!isset($_SESSION['username']))
+{
+   header('location:login.php');
+}
+unset($_SESSION['username']); 
+$_SESSION['logoutmsg']='Logout Sucessfull';
+header("location:index.php");
+exit;
+?>
